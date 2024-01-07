@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper and Scissors</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/main.js"></script>
+  </head>
+  <body>
+    <div>
+      <header>
+        <img src="src/svg/logo.svg" alt="logo">
+  
+        <div>
+          <h2>score</h2>
+          <p>12</p>
+        </div>
+      </header>
+  
+      <main>
+        <button><img id="paper" src="src/svg/icon-paper.svg" alt="paper" data-type="paper"></button>
+        <button><img id="scissors" src="src/svg/icon-scissors.svg" alt="scissors" data-type="scissors"></button>
+        <button><img id="rock" src="src/svg/icon-rock.svg" alt="rock" data-type="rock"></button>
+      </main>
+
+      <button class="btn-rules">rules</button>
+
+      <div class="rules-container rules-container--hidden">
+        <p>rules</p>
+        <img src="src/svg/image-rules.svg" alt="rules">
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<!-- // content
+/* 
+Score
+Rules
+
+You Picked
+The House Picked
+
+You Win
+You Lose
+
+Play Again
+*/ -->
