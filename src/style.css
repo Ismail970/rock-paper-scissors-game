@@ -29,6 +29,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     background-color: white;
     padding: 1em 2em;
     line-height: 1;
@@ -51,52 +52,145 @@ header {
 }
 
 main {
-  /* display: flex; */
+  translate: 0 50px;
   padding: 1em;
-  justify-content: center;
-  background-image: url("svg/bg-triangle.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 250px;
-
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 50%;
-    border: 0;
-    padding: 1em 1em;
-    img {
-      background-color: white;
-      border-radius: 50%;
-      box-shadow: 1px 10px 5px -3px rgba(0,0,0,0.25) inset;
-    }
-  }
 
   button:nth-child(1) {
-    img {
-      padding: 1.6em 2em;
-    }
-    background-image: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
     translate: 10px 33px;
   }
 
   button:nth-child(2) {
-    img {
-      padding: 1.7em 2em;
-    }
-    background-image: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
     translate: 230px -100px;
   }
 
   button:nth-child(3) {
-    img {
-      padding: 2.1em;
-    }
-    background-image: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
     translate: 120px -50px;
   }
+}
+
+.main__game-btns {
+  background-image: url("svg/bg-triangle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 250px;
+}
+
+.main__game-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.main__game-result {
+  div {
+    p {
+      position: absolute;
+      bottom: 0;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .7em;
+    }
+  }
+  
+  div:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    p {
+      translate: 3px 50px;
+    }
+  }
+
+  div:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* background-color: hsl(229, 25%, 31%);
+    width: 100px;
+    height: 100px; */
+
+    p {
+      translate: 3px 53px;
+    }
+  }
+}
+
+.main__game-options {
+  translate: -100px 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__game-stats {
+  color: white;
+  text-transform: uppercase;
+  translate: -15px -50px;
+}
+
+.btn-replay {
+  background-color: white;
+  border: 0;
+  padding: 1em 2.5em;
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: hsl(229, 25%, 31%);
+  letter-spacing: 1px;
+  position: absolute;
+  left: -253px;
+  bottom: -80px;
+  cursor: pointer;
+  transition: background 300ms;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.main--hidden {
+  display: none;
+}
+
+.btn-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 0;
+  padding: 1em 1em;
+
+  img {
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 10px 5px -3px rgba(0,0,0,0.25) inset;
+  }
+}
+
+.btn-game--paper {
+  img {
+    padding: 1.6em 2em;
+  }
+  background-image: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.btn-game--scissors {
+  img {
+    padding: 1.7em 2em;
+  }
+  background-image: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.btn-game--rock {
+  img {
+    padding: 2.1em;
+  }
+  background-image: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
 }
 
 .btn-rules {
@@ -108,8 +202,10 @@ main {
   background: none;
   border: 1px solid white;
   color: white;
-  translate: 120%;
+  position: absolute;
+  bottom: 0;
   margin-bottom: 1em;
+  translate: 120%;
   transition: background 300ms;
 
   &:hover,
@@ -117,6 +213,18 @@ main {
     background-color: white;
     color: hsl(229, 25%, 31%);
   }
+}
+
+.btn-cancel {
+  background: none;
+  border: 0;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1em;
+  font-size: 2em;
+  opacity: .2;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .rules-container {

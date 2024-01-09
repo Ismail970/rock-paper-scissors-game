@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
-    <script src="src/main.js"></script>
+    <script defer src="src/main.js"></script>
   </head>
   <body>
     <div>
@@ -17,14 +17,42 @@
   
         <div>
           <h2>score</h2>
-          <p>12</p>
+          <p id="score">0</p>
         </div>
       </header>
   
       <main>
-        <button><img id="paper" src="src/svg/icon-paper.svg" alt="paper" data-type="paper"></button>
-        <button><img id="scissors" src="src/svg/icon-scissors.svg" alt="scissors" data-type="scissors"></button>
-        <button><img id="rock" src="src/svg/icon-rock.svg" alt="rock" data-type="rock"></button>
+        <div class="main__game-btns">
+          <button class="btn-game btn-game--paper" id="paper" data-option="paper">
+            <img src="src/svg/icon-paper.svg" alt="paper">
+          </button>
+          
+          <button class="btn-game btn-game--scissors" id="scissors" data-option="scissors">
+            <img  src="src/svg/icon-scissors.svg" alt="scissors">
+          </button>
+
+          <button class="btn-game btn-game--rock" id="rock" data-option="rock">
+            <img src="src/svg/icon-rock.svg" alt="rock">
+          </button>
+        </div>
+        
+        <div class="main__game-container main--hidden">
+          <div class="main__game-result">
+              <!-- <div class="btn-game btn-game--paper">
+              <img src="src/svg/icon-paper.svg" alt="player">
+              <p>you picked</p>
+            </div> -->
+
+            <!-- <div>
+              <p>the house picked</p>
+            </div> -->
+          </div>
+
+          <div class="main__game-options">
+            <h1 class="main__game-stats">you win</h1>
+            <button class="btn-replay">play again</button>
+          </div>
+        </div>
       </main>
 
       <button class="btn-rules">rules</button>
@@ -32,6 +60,7 @@
       <div class="rules-container rules-container--hidden">
         <p>rules</p>
         <img src="src/svg/image-rules.svg" alt="rules">
+        <button class="btn-cancel">&#10005;</button>
       </div>
     </div>
   </body>
